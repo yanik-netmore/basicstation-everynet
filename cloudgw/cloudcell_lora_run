@@ -1,0 +1,7 @@
+#!/bin/sh
+
+./reset_hardware.sh
+
+exec ./station -h /configs/station --force --log-file=/var/log/station.log
+
+sleep 30
