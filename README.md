@@ -5,11 +5,20 @@ Publicly reachable files for basicstation configuration of Cloudcell gateway and
 - SSH is needed (either old or new RAT)
 - All needed files stored in a publicly reachable HTTP server, here: https://something.somewhere
 
+-OR-
+
+if directly from github:
+- Cloudcell https://raw.githubusercontent.com/yanik-netmore/basicstation-everynet/refs/heads/main/cloudgw
+- EverynetV2 https://raw.githubusercontent.com/yanik-netmore/basicstation-everynet/refs/heads/main/everynet
+
+
 ## Cloudcell Gateway
 
 - SSH to the gateway and execute this:
 ```
-FILESHOST="https://something.somewhere/cloudgw"
+#FILESHOST="https://something.somewhere/cloudgw"
+FILESHOST="https://raw.githubusercontent.com/yanik-netmore/basicstation-everynet/refs/heads/main/cloudgw"
+
 export PS1="\u@\h: \w\a: "
 sv stop lora
 mount -o rw,remount /
@@ -57,7 +66,8 @@ tail -f /var/log/station.log  | grep -v -e NMEA -e TIMEGPS -e GGA -e garbage -e 
 
 - SSH to the gateway and execute this:
 ```
-FILESHOST="https://something.somewhere/everynet"
+#FILESHOST="https://something.somewhere/everynet"
+FILESHOST="https://raw.githubusercontent.com/yanik-netmore/basicstation-everynet/refs/heads/main/everynet"
 export PS1="\u@\h: \w\a: "
 sv stop ranproxy
 mount -o rw,remount /;mount -o rw,remount /mnt/datafs
