@@ -1,0 +1,5 @@
+app :
+    program_regex = "(app|station)"
+    logdir   = "/var/log/app"
+    maxfiles = 10
+    break    = 1

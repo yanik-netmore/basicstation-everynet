@@ -1,0 +1,7 @@
+#!/bin/sh
+
+./lora_pkt_fwd/reset_hardware.sh
+
+exec ./station -h /mnt/datafs/configs/station --force --log-file=stderr
+
+sleep 30
